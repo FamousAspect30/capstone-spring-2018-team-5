@@ -1,0 +1,9 @@
+C# supports the following data types natively:
+-Signed Integrals: sbyte, short, int, long
+-Unsigned Integrals: byte, ushort, uint, ulong
+-Unicode: char
+-IEEE Floating Point: float, double
+-High Precision Decimal: decimal
+-Boolean: bool
+
+Base data type class: object
