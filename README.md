@@ -2,7 +2,7 @@
 
 This project is being developed for N3TWORK and will be potentially incorporated into their game "Legendary: Game of Heroes".
 
-This project is and augmented reality selfie application written in C# using the Unity game engine. This is done because their game was developed in Unity and will provide easy integration potential in the future. 
+This project is an augmented reality selfie application written in C# using the Unity game engine. This is done because their game was also developed in Unity and will provide easier potential integration in the future. 
 
 User Stories:
  - Users will be able to choose heroes to take pictures with
