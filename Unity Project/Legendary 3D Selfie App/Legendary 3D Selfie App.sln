@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legendary 3D Selfie App", "Legendary 3D Selfie App.csproj", "{83E9321E-0B39-0039-11F6-F8547DA225FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legendary 3D Selfie App.Editor", "Legendary 3D Selfie App.Editor.csproj", "{28B9CD37-9C4D-C69D-241B-A36A42B89F9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83E9321E-0B39-0039-11F6-F8547DA225FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{83E9321E-0B39-0039-11F6-F8547DA225FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{83E9321E-0B39-0039-11F6-F8547DA225FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{83E9321E-0B39-0039-11F6-F8547DA225FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28B9CD37-9C4D-C69D-241B-A36A42B89F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28B9CD37-9C4D-C69D-241B-A36A42B89F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28B9CD37-9C4D-C69D-241B-A36A42B89F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28B9CD37-9C4D-C69D-241B-A36A42B89F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
