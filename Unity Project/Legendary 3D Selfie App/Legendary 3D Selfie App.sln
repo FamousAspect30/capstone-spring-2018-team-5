@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2017
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legendary 3D Selfie App", "Legendary 3D Selfie App.csproj", "{83E9321E-0B39-0039-11F6-F8547DA225FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legendary 3D Selfie App.Plugins", "Legendary 3D Selfie App.Plugins.csproj", "{A2817512-D125-B9D7-267B-B23A6AB4FFCC}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legendary 3D Selfie App.Editor", "Legendary 3D Selfie App.Editor.csproj", "{28B9CD37-9C4D-C69D-241B-A36A42B89F9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Legendary 3D Selfie App.Editor.Plugins", "Legendary 3D Selfie App.Editor.Plugins.csproj", "{906DA78D-BC15-D6D9-85C5-927097DAE63E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +19,18 @@ Global
 		{83E9321E-0B39-0039-11F6-F8547DA225FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83E9321E-0B39-0039-11F6-F8547DA225FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83E9321E-0B39-0039-11F6-F8547DA225FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2817512-D125-B9D7-267B-B23A6AB4FFCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2817512-D125-B9D7-267B-B23A6AB4FFCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2817512-D125-B9D7-267B-B23A6AB4FFCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2817512-D125-B9D7-267B-B23A6AB4FFCC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{28B9CD37-9C4D-C69D-241B-A36A42B89F9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{28B9CD37-9C4D-C69D-241B-A36A42B89F9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28B9CD37-9C4D-C69D-241B-A36A42B89F9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28B9CD37-9C4D-C69D-241B-A36A42B89F9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{906DA78D-BC15-D6D9-85C5-927097DAE63E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{906DA78D-BC15-D6D9-85C5-927097DAE63E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{906DA78D-BC15-D6D9-85C5-927097DAE63E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{906DA78D-BC15-D6D9-85C5-927097DAE63E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
