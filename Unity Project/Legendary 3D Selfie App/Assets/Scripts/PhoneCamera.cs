@@ -29,7 +29,7 @@ public class PhoneCamera : MonoBehaviour {
             return;
         }
 
-        for(int i=0; i< devices.Length; i++)
+        for(int i = 0; i < devices.Length; i++)
         {
             if (!devices[i].isFrontFacing)
             {
@@ -56,7 +56,7 @@ public class PhoneCamera : MonoBehaviour {
 
         selectedCamera = backCam;
         backCam.Play();
-        background.texture = backCam;
+        background.texture = selectedCamera;
 
         camAvailable = true;
 
@@ -73,7 +73,7 @@ public class PhoneCamera : MonoBehaviour {
         float scaleY = frontCam.videoVerticallyMirrored ? -1f : 1f;
         background.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
 
-        int orient = -frontCam.videoRotationAngle;
+        int orient = -selectedCamera.videoRotationAngle;
         background.rectTransform.localEulerAngles = new Vector3(0, 0, orient);
     }
 
@@ -81,12 +81,14 @@ public class PhoneCamera : MonoBehaviour {
     {
         if (selectedCamera == backCam)
         {
+            backCam.Stop();
             selectedCamera = frontCam;
             frontCam.Play();
             background.texture = frontCam;
         }
         else
         {
+            frontCam.Stop();
             selectedCamera = backCam;
             backCam.Play();
             background.texture = backCam;
