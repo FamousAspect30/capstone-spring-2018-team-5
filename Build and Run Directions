@@ -1,8 +1,7 @@
 
 Pre-build Setup:
- - Install Android SDK    (https://developer.android.com/studio/index.html#win-bundle)
+ - Install Android Studio (SDK is included)    (https://developer.android.com/studio/index.html#win-bundle)
  - Install Java JDK       (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
- - Install Android Studio (https://dl.google.com/dl/android/studio/install/3.0.1.0/android-studio-ide-171.4443003-windows.exe)
 
 There is currently a compatibility issue with the newest version of the Android SDK 'Tools' folder, so we have to install an older version:
  - Enable hidden folder viewing within Folder Options of Windows
@@ -19,12 +18,9 @@ Tell Unity where the Android SDK and Java JDK are located:
 Enable Vuforia AR in Unity:
  - File > Build Settings... > Player Settings... > XR Settings (right-hand pane in main Unity window) > Check Vuforia Augmented Reality
 
-Export Android Package:
- - File > Build Setting... > Export > Choose Destination (I sent to Desktop for testing)
-
-Import Package, Build, and Run in Android Studio
- - Import Project... (or File > Import Project if already in a project) > Browse to test package folder > OK
- - Build > Build APK(s)
- - Run (USB Debugging must be enabled on device if running on a phone via USB cable)
+Build and Run:
+ - Ensure your Android devices is plugged in, and USB debugging mode is turned on
+ - File > Build & Run
+ - You should be prompted on your device to allow access to the camera and media
  - Enjoy your hard work!
  
