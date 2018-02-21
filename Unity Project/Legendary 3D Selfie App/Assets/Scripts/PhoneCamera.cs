@@ -13,6 +13,7 @@ public class PhoneCamera : MonoBehaviour {
     private WebCamTexture frontCam;
     private WebCamTexture backCam;
     private Texture defaultBackground;
+    private int screenCapNumber = 00;
 
     public RawImage background;
     public AspectRatioFitter fit;
