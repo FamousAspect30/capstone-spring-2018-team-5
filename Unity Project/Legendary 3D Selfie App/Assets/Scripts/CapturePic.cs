@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class CapturePic : MonoBehaviour {
 
-	public void Capture () {
+  
+	public void Capture ()
+    {
+        ScreenCapture.CaptureScreenshot("Screenshot.png", 1); //Need to concat a timestamp to the end of the screenshot name (to do later)
 		SceneManager.LoadScene("Save Screen");
 	}
 
