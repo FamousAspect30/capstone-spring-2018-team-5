@@ -317,6 +317,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\FindMissingScripts.cs" />
     <Compile Include="Assets\Vuforia\Editor\Scripts\OpenSourceInitializer.cs" />
   </ItemGroup>
   <ItemGroup>

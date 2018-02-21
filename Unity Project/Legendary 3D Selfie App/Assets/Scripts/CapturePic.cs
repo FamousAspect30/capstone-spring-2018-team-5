@@ -10,4 +10,14 @@ public class CapturePic : MonoBehaviour {
 		SceneManager.LoadScene("Save Screen");
 	}
 
+    public void LoadPreviousScene()
+    {
+        if (SceneManager.GetActiveScene().buildIndex > 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+        else
+            Debug.Log("There is no previous Scene!");
+    }
+
 }
