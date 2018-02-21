@@ -189,8 +189,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 351956515}
-        m_MethodName: SwitchCamera
+      - m_Target: {fileID: 1357807168}
+        m_MethodName: Capture
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -646,6 +646,7 @@ GameObject:
   - component: {fileID: 1357807164}
   - component: {fileID: 1357807163}
   - component: {fileID: 1357807167}
+  - component: {fileID: 1357807168}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -740,6 +741,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5384834b67b0b9340b062353e574b851, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1357807168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1357807162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2e1f9f6044ce564a9ce4ce0b5d5870e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1433346023
