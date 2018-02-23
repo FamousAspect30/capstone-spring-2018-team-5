@@ -9,18 +9,16 @@ using UnityEngine.UI;
 public class PhoneCamera : MonoBehaviour {
 
     private bool camAvailable;
-    private WebCamTexture selectedCamera;
+    public WebCamTexture selectedCamera;
     private WebCamTexture frontCam;
     private WebCamTexture backCam;
-    private Texture defaultBackground;
-    private int screenCapNumber = 00;
 
     public RawImage background;
     public AspectRatioFitter fit;
 
     private void Start()
     {
-        defaultBackground = background.texture;
+        DontDestroyOnLoad(selectedCamera);
         WebCamDevice[] devices = WebCamTexture.devices;
 
         if(devices.Length == 0)

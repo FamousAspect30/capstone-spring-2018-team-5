@@ -3,14 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class CapturePic : MonoBehaviour {
+    
+    private string tempName;
+    private int picCounter;
+    private WebCamTexture webCam;
 
-  
-	public void Capture ()
+    private void Start()
     {
-        ScreenCapture.CaptureScreenshot("Screenshot.png", 1); //Need to concat a timestamp to the end of the screenshot name (to do later)
-		SceneManager.LoadScene("Save Screen");
+        tempName = Application.temporaryCachePath + "/pic";
+        picCounter = 0;
+        GameObject obj = GameObject.Find("ARCamera");                   //Find the ARCamera Object within Unity, which contains the script we're looking for.
+        webCam = obj.GetComponent<PhoneCamera>().selectedCamera;        //Set this.webCam to the 'selectedCamera' WebCamTexture.
+    }
+
+    private void TakeSnapShot()
+    {
+        Texture2D snap = new Texture2D(webCam.width, webCam.height);
+        snap.SetPixels(webCam.GetPixels());
+        snap.Apply();
+
+        File.WriteAllBytes(tempName + picCounter.ToString() + ".png", snap.EncodeToPNG());
+        picCounter++;
+    }
+
+    public void Capture ()
+    {
+        TakeSnapShot();
+        SceneManager.LoadScene("Save Screen");
 	}
 
     public void LoadPreviousScene()

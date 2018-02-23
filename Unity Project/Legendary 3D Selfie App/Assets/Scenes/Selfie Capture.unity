@@ -524,6 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1af21c4a9ad33b345b9e06b205d2cf03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  selectedCamera: {fileID: 0}
   background: {fileID: 273371594}
   fit: {fileID: 273371591}
 --- !u!1 &428174456
