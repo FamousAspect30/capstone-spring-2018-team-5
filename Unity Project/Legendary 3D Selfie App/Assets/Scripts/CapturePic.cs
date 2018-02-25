@@ -25,7 +25,8 @@ public class CapturePic : MonoBehaviour {
         snap.SetPixels(webCam.GetPixels());
         snap.Apply();
 
-        File.WriteAllBytes(tempName + picCounter.ToString() + ".png", snap.EncodeToPNG());
+        //File.WriteAllBytes(tempName + picCounter.ToString() + ".png", snap.EncodeToPNG());
+		File.WriteAllBytes("sdcard/DCIM/camera/" + tempName + picCounter.ToString() + ".jpg", snap.EncodeToJPG());
         picCounter++;
     }
 
