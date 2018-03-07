@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System.IO;
 
 public class SaveScreenMenu : MonoBehaviour {
@@ -8,9 +9,14 @@ public class SaveScreenMenu : MonoBehaviour {
     public Texture2D picture;
     private Sprite sprite;
     private SpriteRenderer sr;
+    private ManagerScript manager;
+    private RawImage background;
 
     private void Start()
     {
+        manager = GameObject.Find("GameManagerObject").GetComponent<ManagerScript>();
+        background.texture = manager.getSnap();
+
         savePath = "/Internal Storage/DCIM/Camera";
         //GameObject obj = GameObject.Find("Canvas");
         //picture = obj.GetComponent<CapturePic>().snap;
@@ -23,13 +29,8 @@ public class SaveScreenMenu : MonoBehaviour {
         File.WriteAllBytes(savePath + System.DateTime.Now.ToString() + ".jpg", picture.EncodeToJPG());
     }
 
-    public void LoadPreviousScene()
+    public void Back()
     {
-        if (SceneManager.GetActiveScene().buildIndex > 0)
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
-        }
-        else
-            Debug.Log("There is no previous Scene!");
+        manager.LoadPreviousScene(SceneManager.GetActiveScene());
     }
 }

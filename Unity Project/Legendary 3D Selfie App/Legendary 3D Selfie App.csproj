@@ -301,7 +301,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\CapturePic.cs" />
-    <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MainMenuScript.cs" />
+    <Compile Include="Assets\Scripts\ManagerScript.cs" />
     <Compile Include="Assets\Scripts\PhoneCamera.cs" />
     <Compile Include="Assets\Scripts\SaveScreenMenu.cs" />
     <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />

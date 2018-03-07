@@ -9,15 +9,17 @@ using UnityEngine.UI;
 public class PhoneCamera : MonoBehaviour {
 
     private bool camAvailable;
-    public WebCamTexture selectedCamera;
     private WebCamTexture frontCam;
     private WebCamTexture backCam;
+    private Texture defaultBackground;
 
+    public WebCamTexture selectedCamera;
     public RawImage background;
     public AspectRatioFitter fit;
 
     private void Start()
     {
+        defaultBackground = background.texture;              //backup background image in case WebCamTexture is not found
         DontDestroyOnLoad(selectedCamera);
         WebCamDevice[] devices = WebCamTexture.devices;
 
@@ -40,36 +42,39 @@ public class PhoneCamera : MonoBehaviour {
                 frontCam = new WebCamTexture(devices[i].name, Screen.width, Screen.height);
             }
         }
+		
+		selectedCamera = frontCam;
 
         if (backCam == null)
         {
             Debug.Log("Unable to detect rear-facing camera.");
+            selectedCamera = frontCam;
             return;
         }
 
         if (frontCam == null)
         {
             Debug.Log("Unable to detect front-facing camera.");
+            selectedCamera = backCam;
             return;
         }
 
-        selectedCamera = backCam;
-        backCam.Play();
+        selectedCamera.Play();
         background.texture = selectedCamera;
 
         camAvailable = true;
-
     }
 
+    //The Update function runs on each frame
     private void Update()
     {
         if (!camAvailable)
             return;
 
-        float ratio = (float)frontCam.width / (float)frontCam.height;
+        float ratio = (float)selectedCamera.width / (float)selectedCamera.height;
         fit.aspectRatio = ratio;
 
-        float scaleY = frontCam.videoVerticallyMirrored ? -1f : 1f;
+        float scaleY = selectedCamera.videoVerticallyMirrored ? -1f : 1f;
         background.rectTransform.localScale = new Vector3(1f, scaleY, 1f);
 
         int orient = -selectedCamera.videoRotationAngle;
