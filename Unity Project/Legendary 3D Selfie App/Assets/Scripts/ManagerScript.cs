@@ -51,6 +51,7 @@ public class ManagerScript : MonoBehaviour {
         catch (Exception e)
         {
             Debug.Log("No Toast messages on non-Android devices, silly!");
+            Debug.Log(e.ToString());
         }
     }
 

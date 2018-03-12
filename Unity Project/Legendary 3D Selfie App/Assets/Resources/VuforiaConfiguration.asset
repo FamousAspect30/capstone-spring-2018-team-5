@@ -19,8 +19,8 @@ MonoBehaviour:
     maxSimultaneousImageTargets: 1
     maxSimultaneousObjectTargets: 1
     useDelayedLoadingObjectTargets: 0
-    cameraDirection: 0
-    mirrorVideoBackground: 0
+    cameraDirection: 2
+    mirrorVideoBackground: 1
   digitalEyewear:
     cameraOffset: 0.06
     distortionRenderingLayer: 31
@@ -43,8 +43,10 @@ MonoBehaviour:
       FieldOfView: {x: 0, y: 0, z: 0, w: 0}
       ContainsMagnet: 0
   databaseLoad:
-    dataSetsToLoad: []
-    dataSetsToActivate: []
+    dataSetsToLoad:
+    - device_targets
+    dataSetsToActivate:
+    - device_targets
   videoBackground:
     clippingMode: 0
     numDivisions: 2
