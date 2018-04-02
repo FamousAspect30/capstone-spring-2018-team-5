@@ -11,7 +11,7 @@ public class SaveScreenMenu : MonoBehaviour {
 
     private void Start()
     {
-        savePath = "/Internal Storage/DCIM/Camera";
+        savePath = "/storage/emulated/0/DCIM/Camera";
         //GameObject obj = GameObject.Find("Canvas");
         //picture = obj.GetComponent<CapturePic>().snap;
        // sprite = Sprite.Create(picture, new Rect(0f, 0f, picture.width, picture.height), new Vector2(0.5f, 0.5f), 100.0f);

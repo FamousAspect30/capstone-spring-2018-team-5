@@ -9,6 +9,7 @@ using Vuforia;
 public class PhoneARCam : MonoBehaviour {
 
     private string savePath;
+	private SaveScreenMenu save_screen_menu;
     private ManagerScript manager;
     private CameraDevice ARCam;
     private Image img;
@@ -25,10 +26,12 @@ public class PhoneARCam : MonoBehaviour {
     public void CapturePic()
     {
 		//if (ARCam.SetFrameFormat (mPix, true)) {
-			img = ARCam.GetCameraImage (mPix);
+		img = ARCam.GetCameraImage (mPix);
 		//}
 		//manager.showToastOnUiThread("Image Captured");
 		img.CopyToTexture(manager.snapShotTex);
+		img.CopyToTexture (save_screen_menu.picture);
+		save_screen_menu.SavePhoto();
         //manager.showToastOnUiThread("Image copied to Manager.Texture2D");
         //manager.showToastOnUiThread("Screenshot Save to: " + savePath);
         manager.LoadNextScene(SceneManager.GetActiveScene());
