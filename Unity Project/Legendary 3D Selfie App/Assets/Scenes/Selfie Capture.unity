@@ -1044,8 +1044,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1488016746}
-        m_MethodName: CapturePic
+      - m_Target: {fileID: 323939507}
+        m_MethodName: Capture
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
