@@ -24,14 +24,18 @@ public class PhoneARCam : MonoBehaviour {
 
     public void CapturePic()
     {
-		//if (ARCam.SetFrameFormat (mPix, true)) {
+		if (ARCam.SetFrameFormat (mPix, true)) {
 			img = ARCam.GetCameraImage (mPix);
-		//}
+		}
+
+		if (img == null)
+			Debug.Log ("img is null");
+			//manager.showToastOnUiThread ("img is null");
 		//manager.showToastOnUiThread("Image Captured");
-		img.CopyToTexture(manager.snapShotTex);
+		//img.CopyToTexture(manager.snapShotTex);
         //manager.showToastOnUiThread("Image copied to Manager.Texture2D");
         //manager.showToastOnUiThread("Screenshot Save to: " + savePath);
-        manager.LoadNextScene(SceneManager.GetActiveScene());
+        //manager.LoadNextScene(SceneManager.GetActiveScene());
     }
 
 }
