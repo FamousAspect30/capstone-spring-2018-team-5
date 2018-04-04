@@ -922,7 +922,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 323939507}
+      - m_Target: {fileID: 1488016746}
         m_MethodName: switchCam
         m_Mode: 1
         m_Arguments:

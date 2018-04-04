@@ -36,6 +36,7 @@ public class CaptureMenuScript : MonoBehaviour {
 		//picCounter++;
 	}
 
+	/*
 	public void switchCam()
 	{
 		Vuforia.CameraDevice.CameraDirection currentDir = Vuforia.CameraDevice.Instance.GetCameraDirection();
@@ -60,4 +61,5 @@ public class CaptureMenuScript : MonoBehaviour {
 		Vuforia.CameraDevice.Instance.Init(newDir);
 		Vuforia.CameraDevice.Instance.Start();
 	}
+	*/
 }
