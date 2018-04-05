@@ -7,11 +7,12 @@ using Vuforia;
 public class CaptureMenuScript : MonoBehaviour {
 
     private ManagerScript manager;
-	bool cameramode = false;
+	private PhoneARCam ARScript;
 
     void Start ()
     {
         manager = GameObject.Find("GameManagerObject").GetComponent<ManagerScript>();
+		ARScript = GameObject.Find("ARCamera").GetComponent<PhoneARCam>();
 	}
 	
     public void Back()
@@ -21,7 +22,9 @@ public class CaptureMenuScript : MonoBehaviour {
 
 	public void Capture()
 	{
-		Debug.Log ("Capture Functionality Here");
+		ARScript.CapturePic();
+		//ARScript.ARCam.Stop();
+		//manager.LoadNextScene(SceneManager.GetActiveScene());
 
 		//OLD METHOD
 		//snap = new Texture2D(webCam.width, webCam.height);

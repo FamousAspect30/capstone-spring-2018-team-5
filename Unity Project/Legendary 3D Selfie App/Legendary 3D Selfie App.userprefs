@@ -3,11 +3,11 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\SaveMenuScript.cs">
     <Files>
       <File FileName="Assets\Scripts\ManagerScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\PhoneARCam.cs" Line="40" Column="4" />
-      <File FileName="Assets\Scripts\CaptureMenuScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PhoneARCam.cs" Line="42" Column="5" />
+      <File FileName="Assets\Scripts\CaptureMenuScript.cs" Line="26" Column="5" />
       <File FileName="Assets\Scripts\MainMenuScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\SaveMenuScript.cs" Line="19" Column="86" />
-      <File FileName="Assets\Scripts\SaveScreenMenu.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\SaveMenuScript.cs" Line="22" Column="33" />
+      <File FileName="Assets\Scripts\SaveScreenMenu.cs" Line="14" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
