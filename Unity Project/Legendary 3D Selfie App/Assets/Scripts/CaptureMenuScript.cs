@@ -8,6 +8,7 @@ public class CaptureMenuScript : MonoBehaviour {
 
     private ManagerScript manager;
 	private PhoneARCam ARScript;
+	GameObject ui;
 
     void Start ()
     {

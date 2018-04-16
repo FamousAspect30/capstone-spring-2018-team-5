@@ -11,6 +11,7 @@ public class SaveMenuScript : MonoBehaviour {
     private Image bgImg;
     private Sprite bgSprite;
     private Rect rect;
+	private Texture2D picture;
 	string savePath;
 
     void Start ()
@@ -20,6 +21,8 @@ public class SaveMenuScript : MonoBehaviour {
         rect = new Rect(0, 0, manager.snapShotTex.width, manager.snapShotTex.height);
         bgSprite = Sprite.Create(manager.snapShotTex, rect, new Vector2(0.5f, 0.5f));
         bgImg.sprite = bgSprite;
+		savePath = "/storage/emulated/0/DCIM";
+		picture = manager.snapShotTex;
 
 		if (Directory.Exists ("/storage/emulated/0/DCIM")) 
 		{
@@ -36,6 +39,7 @@ public class SaveMenuScript : MonoBehaviour {
 	public void SavePhoto()
 	{
 		manager.showToastOnUiThread (Application.persistentDataPath);
+		File.WriteAllBytes(savePath + System.DateTime.Now.ToString() + ".jpg", picture.EncodeToJPG());
 	}
 
 }

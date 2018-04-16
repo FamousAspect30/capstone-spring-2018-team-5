@@ -13,6 +13,7 @@ public class PhoneARCam : MonoBehaviour {
     private Image img;
 	private Image.PIXEL_FORMAT format1, format2;
 	bool validFormat;
+	GameObject ui;
 
 	void Start ()
     {
@@ -22,10 +23,16 @@ public class PhoneARCam : MonoBehaviour {
 		format2 = Image.PIXEL_FORMAT.RGB565;
 		validFormat = ARCam.SetFrameFormat (format1, true);
 		ARCam.SetFrameFormat (format2, false);
+		ui = GameObject.Find ("Canvas");
 	}
 
     public void CapturePic()
     {
+		ui.SetActiveRecursively (false);
+		manager.snapShotTex = ScreenCapture.CaptureScreenshotAsTexture();
+		manager.LoadNextScene (SceneManager.GetActiveScene ());
+
+		/*
 		if (validFormat) 		//first attempted format is valid, so getImage using format1
 		{
 			img = ARCam.GetCameraImage (format1);
@@ -43,6 +50,7 @@ public class PhoneARCam : MonoBehaviour {
 		img.CopyToTexture(manager.snapShotTex);
 		ARCam.Stop ();
 		manager.LoadNextScene(SceneManager.GetActiveScene());
+		*/
     }
 
 	public void switchCam()
