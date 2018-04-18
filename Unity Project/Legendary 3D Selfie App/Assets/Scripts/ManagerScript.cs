@@ -38,25 +38,14 @@ public class ManagerScript : MonoBehaviour {
             context = currentActivity.Call<AndroidJavaObject>("getApplicationContext");
         }
 
-        picCounter = 0;
-
-		Rect bgRect = GameObject.Find ("Background").GetComponent<RectTransform>().rect;
-		snapShotTex = new Texture2D ((int)bgRect.width, (int)bgRect.height);
-		//showToastOnUiThread("Default Texture Created");
+        picCounter = 00;
+		snapShotTex = new Texture2D (Screen.width, Screen.height);
     }
 
     public void showToastOnUiThread(string toastString)
     {
         this.toastString = toastString;
-        try
-        {
-            currentActivity.Call("runOnUiThread", new AndroidJavaRunnable(showToast));
-        }
-        catch (Exception e)
-        {
-            Debug.Log("No Toast messages on non-Android devices, silly!");
-            Debug.Log(e.ToString());
-        }
+        currentActivity.Call("runOnUiThread", new AndroidJavaRunnable(showToast));
     }
 
     void showToast()

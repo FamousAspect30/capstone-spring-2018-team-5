@@ -10,47 +10,26 @@ public class PhoneARCam : MonoBehaviour {
 
     private ManagerScript manager;
     public CameraDevice ARCam;
-    private Image img;
-	private Image.PIXEL_FORMAT format1, format2;
-	bool validFormat;
 	GameObject ui;
+	Texture2D pic;
+	bool grab = true;
+	string savePath;
+	int picCounter = 00;
 
 	void Start ()
     {
         manager = GameObject.Find("GameManagerObject").GetComponent<ManagerScript>();
         ARCam = CameraDevice.Instance;
-		format1 = Image.PIXEL_FORMAT.RGB888;
-		format2 = Image.PIXEL_FORMAT.RGB565;
-		validFormat = ARCam.SetFrameFormat (format1, true);
-		ARCam.SetFrameFormat (format2, false);
 		ui = GameObject.Find ("Canvas");
+		pic = new Texture2D (Screen.width, Screen.height);
+		savePath = Application.temporaryCachePath;
 	}
 
     public void CapturePic()
-    {
-		ui.SetActiveRecursively (false);
-		manager.snapShotTex = ScreenCapture.CaptureScreenshotAsTexture();
-		manager.LoadNextScene (SceneManager.GetActiveScene ());
-
-		/*
-		if (validFormat) 		//first attempted format is valid, so getImage using format1
-		{
-			img = ARCam.GetCameraImage (format1);
-			manager.showToastOnUiThread("Format 1 is Valid!");
-		}
-		else 					//otherwise, attempt using format2 and getImage again
-		{
-			ARCam.SetFrameFormat (format1, false);
-			ARCam.SetFrameFormat (format2, true);
-			img = ARCam.GetCameraImage (format2);
-			manager.showToastOnUiThread("Format 2 is Valid!");
-		}
-
-		//manager.snapShotTex = null;
-		img.CopyToTexture(manager.snapShotTex);
-		ARCam.Stop ();
-		manager.LoadNextScene(SceneManager.GetActiveScene());
-		*/
+	{
+		//Sets grab to true so the OnPostRender() method knows to capture the screenshot.
+		grab = true;
+		return;
     }
 
 	public void switchCam()
@@ -68,6 +47,30 @@ public class PhoneARCam : MonoBehaviour {
 			ARCam.Deinit();
 			ARCam.Init(Vuforia.CameraDevice.CameraDirection.CAMERA_FRONT);
 			ARCam.Start();
+		}
+	}
+
+	private void OnPostRender()
+	{
+		if (grab) {
+			//First hide the UI elements.
+			ui.SetActiveRecursively (false);
+			//Then create the texture to hold the screenshot.
+			Texture2D pic = new Texture2D (Screen.width, Screen.height, TextureFormat.RGB24, false);
+			//Read all of the pixels in the Rect starting at the corner and going to the full screen height and width.
+			pic.ReadPixels (new Rect (0, 0, Screen.width, Screen.height), 0, 0, false);
+			//Draw pixels to the texture.
+			pic.Apply ();
+			//Save the texture as a picture on the device at a given filepath.
+			File.WriteAllBytes (savePath + "/pic" + manager.getPicCounter() + ".jpg", pic.EncodeToJPG ());
+			//manager.showToastOnUiThread ("Picture " + manager.getPicCounter() + " captured!");
+			manager.snapShotTex = pic;
+			//Reset grab, so the method only captures 1 picture.
+			grab = false;
+			//Increment the picCounter
+			manager.incrementCounter();
+			//Show the UI elements again.
+			ui.SetActiveRecursively (true);
 		}
 	}
 }

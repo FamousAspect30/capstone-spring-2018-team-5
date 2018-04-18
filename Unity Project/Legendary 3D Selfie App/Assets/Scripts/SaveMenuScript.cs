@@ -18,17 +18,9 @@ public class SaveMenuScript : MonoBehaviour {
     {
         manager = GameObject.Find("GameManagerObject").GetComponent<ManagerScript>();
         bgImg = GameObject.Find("Background").GetComponent<Image>();
-        rect = new Rect(0, 0, manager.snapShotTex.width, manager.snapShotTex.height);
-        bgSprite = Sprite.Create(manager.snapShotTex, rect, new Vector2(0.5f, 0.5f));
+        rect = new Rect(0f, 0f, Screen.width, Screen.height);
+        bgSprite = Sprite.Create(manager.snapShotTex, rect, new Vector2(0f, 0f));
         bgImg.sprite = bgSprite;
-		savePath = "/storage/emulated/0/DCIM";
-		picture = manager.snapShotTex;
-
-		if (Directory.Exists ("/storage/emulated/0/DCIM")) 
-		{
-			manager.showToastOnUiThread("Internal Storage Found!");
-		}
-
 	}
 	
     public void Back()

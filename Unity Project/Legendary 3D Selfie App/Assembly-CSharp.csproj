@@ -56,7 +56,6 @@
      <Compile Include="Assets\Scripts\ManagerScript.cs" />
      <Compile Include="Assets\Scripts\PhoneARCam.cs" />
      <Compile Include="Assets\Scripts\SaveMenuScript.cs" />
-     <Compile Include="Assets\Scripts\SaveScreenMenu.cs" />
      <Compile Include="Assets\Vuforia\Scripts\DefaultInitializationErrorHandler.cs" />
      <Compile Include="Assets\Vuforia\Scripts\DefaultTrackableEventHandler.cs" />
      <None Include="Assets\Vuforia\Shaders\ColoredLines.shader" />
