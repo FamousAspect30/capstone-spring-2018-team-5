@@ -1,10 +1,10 @@
 sceneSetups:
 - path: Assets/Scenes/Splash Screen.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/Scenes/Selfie Capture.unity
   isLoaded: 1
   isActive: 1
+- path: Assets/Scenes/Selfie Capture.unity
+  isLoaded: 1
+  isActive: 0
 - path: Assets/Scenes/Save Screen.unity
   isLoaded: 0
   isActive: 0

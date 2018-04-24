@@ -57,7 +57,7 @@ public class CaptureMenuScript : MonoBehaviour {
 	{
 		//Calls the capture method on the ARCam object.
 		ARScript.CapturePic ();
-		//manager.LoadNextScene (SceneManager.GetActiveScene ());
+		manager.showToastOnUiThread ("Picture Captured!");
 	}
 
 

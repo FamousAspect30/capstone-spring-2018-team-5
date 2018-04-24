@@ -7,17 +7,16 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour {
 
 	private ManagerScript manager;
-	string savePath;
 
     void Start ()
     {
         manager = GameObject.Find("GameManagerObject").GetComponent<ManagerScript>();	
-		savePath = Application.temporaryCachePath;
+		StartCoroutine ("Wait");
 	}
 
-    public void StartGame()
-    {
-		//smanager.showToastOnUiThread (savePath);
-        manager.LoadNextScene(SceneManager.GetActiveScene());
+    IEnumerator Wait()
+	{
+		yield return new WaitForSeconds (1.5f);
+		manager.LoadNextScene(SceneManager.GetActiveScene());
     }
 }
