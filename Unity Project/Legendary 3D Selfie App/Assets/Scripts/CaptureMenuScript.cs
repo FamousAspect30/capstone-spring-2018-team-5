@@ -17,6 +17,7 @@ public class CaptureMenuScript : MonoBehaviour {
     {
         manager = GameObject.Find("GameManagerObject").GetComponent<ManagerScript>();
 		ARScript = GameObject.Find("ARCamera").GetComponent<PhoneARCam>();
+
 		fireHero = GameObject.Find ("Fire Champion").GetComponent<SpriteRenderer>();
 		waterHero = GameObject.Find ("Water Champion").GetComponent<SpriteRenderer>();
 		earthHero = GameObject.Find ("Earth Champion").GetComponent<SpriteRenderer>();
